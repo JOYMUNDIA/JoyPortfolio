@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Montserrat:wght@400;500;600;700&family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .thankYou-container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        .thankYou-container .thankYou-image{
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .thankYou-container .thankYou-image h1{
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: black;
+        }
+
+        .thankYou-container .thankYou-image .message-sent-image{
+            width: 86%;
+        }
+
+        .thankYou-container .thankYou-divider{
+            width: 1.25rem;
+            height: 85%;
+            overflow: hidden;
+        }
+
+        .thankYou-container .thankYou-divider:before {
+            content: '';
+            display: block;
+            margin-left: 20px;
+            width: 1.25rem;
+            height: 85%;
+            -o-border-radius: 0.75rem / 7.8125rem;
+            box-shadow: 0 0 8px black;
+            -webkit-border-radius: 0.75rem / 7.8125rem;
+            -moz-border-radius: 0.75rem / 7.8125rem;
+            -ms-border-radius: 0.75rem / 7.8125rem;
+            border-radius: 0.75rem / 7.8125rem;
+        }
+
+        .thankYou-container .thankYou-text{
+            width: 60%;
+        }
+
+        .thankYou-container .thankYou-text-point{
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .thankYou-container .thankYou-text-point ul{
+            width: 100%;
+        }
+
+        .thankYou-container .thankYou-text-point li{
+            padding: 0.7rem 0rem;
+            font-size: 1.3rem;
+            color: black;
+        }
+
+        .message-sent-text {
+            color: #000000;
+            font-size: 1.2rem;
+            line-height: 1.55rem;
+            padding: 0 0.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .message-sent {
+            appearance: button;
+            background-color: transparent;
+            background-image: linear-gradient(to bottom, #fff, #f8eedb);
+            border: 0 solid #e5e7eb;
+            border-radius: .5rem;
+            box-sizing: border-box;
+            color: #482307;
+            column-gap: 1rem;
+            cursor: pointer;
+            display: flex;
+            font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            font-size: 100%;
+            font-weight: 700;
+            line-height: 24px;
+            margin: 0;
+            outline: 2px solid transparent;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            text-transform: none;
+            transition: all .1s cubic-bezier(.4, 0, .2, 1);
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: manipulation;
+            box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+        }
+
+        .message-sent:active {
+            background-color: #f3f4f6;
+            box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+            transform: translateY(0.125rem);
+        }
+
+        .message-sent:focus {
+            box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .thankYou-container{
+                flex-direction: column;
+            }
+
+            .thankYou-container .thankYou-image{
+                width: 100%;
+                height: 30%;
+                padding: 0.5rem;
+                padding-bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .thankYou-container .thankYou-image .message-sent-image{
+                height: 96%;
+                width: auto;
+            }
+
+            .thankYou-container .thankYou-divider{
+                -o-transform: rotate(-90deg);
+                -webkit-transform: rotate(-90deg);
+                -moz-transform: rotate(-90deg);
+                -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                margin-bottom: 0;
+            }
+
+            .thankYou-container .thankYou-text{
+                width: 100%;
+                height: 68%;
+            }
+
+            .thankYou-container .thankYou-text-point{
+                width: 90%;
+                margin-top: -6rem;
+                
+            }
+
+            .thankYou-container .thankYou-text-point ul{
+                width: 90%;
+                justify-content: flex-start;
+            }
+
+            .thankYou-container .thankYou-text-point li{
+                padding: 0.4rem 0.2rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Thank-you-message-sent" id="message-recieved">
+        <div class="thankYou-container">
+            <div class="thankYou-image">
+                <h1>Thank You</h1>
+                <img class="message-sent-image" src="images/Message-sent.png" alt="Envelope with the text, Message Sent">
+            </div>
+            <div class="thankYou-divider"></div>
+            <div class="thankYou-text">
+                <ul class="thankYou-text-point">
+                    <li>
+                        <p class="message-sent-text">
+                            Your message has been delivered successfully. <br>
+                            Thank you for reaching out. I will provide a response soon.<br><br>
+                            <i>
+                                In <span id="countdown">30</span> seconds, you will be redirected to the Portfolio Website.<br>
+                                If you are not automatically redirected, click the button below.
+                            </i><br><br>
+                            
+                            <button id="redirect-button" class="message-sent" role="button" onclick="manualRedirect()">← &nbsp; Back to Portfolio Website</button>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to start countdown and redirection
+        let countdownTimer;
+        let timeRemaining = 30; // 30 seconds countdown
+
+        function startCountdown() {
+            const countdownSpan = document.getElementById('countdown');
+            const redirectButton = document.getElementById('redirect-button');
+            
+            countdownTimer = setInterval(function() {
+                countdownSpan.textContent = timeRemaining; // Update countdown
+                timeRemaining--;
+
+                if (timeRemaining < 0) {
+                    clearInterval(countdownTimer); // Stop the countdown
+                    window.location.href = "https://joymundia.netlify.app/"; // Redirect after 30 seconds
+                }
+            }, 1000); // Update every 1 second
+        }
+
+        // Function to handle manual redirect when the button is clicked
+        function manualRedirect() {
+            clearInterval(countdownTimer); // Stop the countdown
+            window.location.href = "https://joymundia.netlify.app/"; // Redirect immediately
+        }
+
+        window.onload = startCountdown; // Start the countdown when the page loads
+    </script>
+</body>
+</html>
