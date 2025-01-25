@@ -1,0 +1,1199 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Tangerine:wght@700&display=swap');
+        
+/* General Reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Menu Styling */
+
+.nav-body a {
+    text-decoration: none;
+}
+
+.nav-body ul {
+    list-style: none;
+}
+
+.nav-body button {
+    border: none;
+    outline: none;
+}
+
+.nav-body nav {
+    height: 100vh;
+    background: linear-gradient(45deg, #b0b0b0, #8c8c8c); /* Gradient metallic silver */
+    width: 16rem; /* 200px to rem */
+    padding: 1rem; /* 10px to rem */
+    transform: translateX(-16rem); /* 200px to rem */
+    transition: transform .5s ease-in-out;
+    position: fixed; /* Keep the menu fixed while scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between top content and bottom content */
+}
+
+.nav-body nav.menu-active {
+    transform: translateX(0);
+}
+
+.nav-body nav .logo {
+    margin: 0; /* Remove the extra space between logo and list items */
+    padding-bottom: 1.25rem; /* Optional, if you want a little space after the logo */
+}
+
+.nav-body nav .logo a {
+    font-family: 'Tangerine', cursive; /* Font for logo */
+    font-size: 2.5rem;
+    color: white;
+    padding: 0.625rem; /* 10px to rem */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    transition: .3s ease;
+}
+
+.nav-body nav .logo a:hover {
+    padding-right: 1.25rem; /* 20px to rem */
+}
+
+.nav-body nav .logo a i {
+    font-size: 2rem;
+    margin-right: 0.625rem; /* 10px to rem */
+    transition: .5s ease-in-out;
+}
+
+.nav-body nav .logo a:hover i {
+    transform: rotate(180deg);
+}
+
+.nav-body nav ul li {
+    padding: 0.625rem; /* 10px to rem */
+    font-weight: 500;
+    font-size: 1.5rem;
+    transition: background-color .3s, box-shadow .3s ease-in-out; /* Transition for background and shadow */
+}
+
+.nav-body nav ul li a {
+    color: #fff;
+    transition: all .5s ease;
+    display: block;
+    padding: 0.625rem; /* 10px to rem */
+}
+
+.nav-body nav ul li a:hover {
+    background-color: #fff;
+    color: black;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.2); /* Neumorphism effect */
+}
+
+/* Active Link (Neumorphism) */
+.nav-body nav ul li a.active-navlink {
+    background-color: #f0f0f0;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.4);
+    color: #333;
+}
+
+.nav-body button.menu-btn {
+    cursor: pointer;
+    border-radius: 57% 43% 37% 63% / 51% 53% 47% 49%;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5), 15px 25px 10px rgba(0, 0, 0, 0.1), 15px 20px 2px rgba(0, 0, 0, 0.05), inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+    color: black;
+    font-size: 2rem;
+    width: 80px; /* Reduced width */
+    height: 80px; /* Reduced height */
+    background: transparent;
+    position: fixed;
+    top: 1rem; /* 10px to rem */
+    left: 1rem; /* 10px to rem */
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out; /* Smooth transition for movement */
+    z-index: 1001; /* Make sure the button is above other content */
+}
+
+.nav-body button.menu-btn::before{
+    content: '';
+    position: absolute;
+    top: 15px; /* Adjusted to fit inside the smaller drop */
+    left: 18px; /* Adjusted to fit inside the smaller drop */
+    background: #fff;
+    color: black;
+    width: 12px; /* Reduced width */
+    height: 12px; /* Reduced height */
+    border-radius: 57% 43% 37% 63% / 48% 37% 63% 52%;
+}
+
+.nav-body button.menu-btn::after {
+    content: '';
+    position: absolute;
+    top: 13px; /* Adjusted to fit inside the smaller drop */
+    left: 32px; /* Adjusted to fit inside the smaller drop */
+    background: #fff;
+    color: black;
+    width: 6px; /* Reduced width */
+    height: 6px; /* Reduced height */
+    border-radius: 57% 43% 37% 63% / 48% 37% 63% 52%;
+}
+
+.nav-body button.menu-btn i {
+    color: black; /* Ensure the icon is black */
+    z-index: 1002; /* Ensure icon is above other elements */
+}
+
+.nav-body button.menu-btn:hover {
+    background-color: #8c8c8c;
+    color: #fff;
+}
+
+.nav-body button.menu-btn.menu-active {
+    transform: translateX(16rem); /* 200px to rem */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-body nav {
+        width: 15rem; /* Adjust for smaller screens */
+    }
+
+    .nav-body nav ul {
+        padding-top: 1.5rem; /* Adjust for spacing */
+    }
+
+    .nav-body nav ul li {
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .nav-body button.menu-btn {
+        top: 1.5rem; /* Positioning button properly */
+        left: 1.5rem;
+    }
+
+    .nav-body nav ul li a {
+        padding: 1rem 1.5rem; /* Adjust padding for better readability */
+    }
+}
+
+/* LinkedIn Footer */
+.nav-body .linkedin-footer {
+    margin-top: auto; /* Push it to the bottom of the nav */
+    text-align: right;
+    padding: 1rem;
+}
+
+.nav-body .linkedin-footer a {
+    font-size: 2rem;
+    color: white;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.nav-body .linkedin-footer a:hover {
+    color: #0a66c2; /* LinkedIn blue */
+}
+
+/* Page contents Styling */
+
+.page-contents{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Home Section Styles */
+.home-body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('images/pineWood.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Source Serif 4", serif;
+    position: relative;
+}
+
+.home-body .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column; /* Align all content in a vertical stack */
+    text-align: center;
+}
+
+/* Card Styling */
+.home-body .card {
+    width: 50rem; /* 800px */
+    height: 31.25rem; /* 500px */
+    background: linear-gradient(145deg, rgb(129, 129, 129), #1b1b1b); /* Grey metal effect */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0.625rem 0.625rem 1.25rem rgba(0, 0, 0, 0.637); /* 10px 10px 20px */
+    position: relative;
+    z-index: 10;
+    transform: translateY(-1.25rem); /* 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 1.875rem; /* 30px */
+    transition: all 0.3s ease;
+}
+
+/* Cut-out text style for the title */
+.home-body .cut-out-text {
+    font-size: 5rem; /* 80px */
+    font-family: "Tangerine", cursive;
+    font-style: normal;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('images/pineWood.jpg');
+    text-align: center;
+    margin: 0;
+    font-weight: bolder;
+    position: relative;
+    z-index: 15;
+}
+
+/* Glassmorphism Button Styling */
+.home-body .button {
+    position: relative;
+    width: 15.625rem; /* 250px */
+    height: 3.125rem; /* 50px */
+    margin: 0.9375rem 0; /* 15px 0 */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for frosted glass effect */
+    border: 0.1875rem solid rgba(255, 255, 255, 0.2); /* 3px solid */
+    border-radius: 1.25rem; /* 20px */
+    z-index: 5;
+    text-align: center;
+    font-size: 1.25rem; /* 20px */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Background blur for frosted glass effect */
+}
+
+/* Button active and hover states */
+.home-body .button:active, .button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 1.875rem 3.75rem -0.75rem inset,
+        rgba(0, 0, 0, 0.3) 0px 1.125rem 2.25rem -1.125rem inset; /* 30px 60px -12px inset */
+    transform: scale(1.05); /* Slight scaling effect */
+    background-color: rgba(255, 255, 255, 0.15); /* Slight increase in opacity for focus */
+}
+
+/* Button's text that looks like it's floating above */
+.home-body .button::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: rgb(3, 3, 3);
+    font-size: 1.25rem; /* 20px */
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Making the background image show through the cut-out */
+.home-body .button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/pineWood.jpg'); /* Same background as body */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Place it behind the floating text */
+    filter: blur(0.1875rem); /* 3px */
+}
+
+/* Image at the bottom-right corner of the card (default position for larger screens) */
+.home-body .card .corner-image {
+    position: absolute;
+    right: 0.125rem; /* 2px */
+    bottom: 0.125rem; /* 2px */
+    width: 11.25rem; /* 180px */
+    height: auto;
+    z-index: 1;
+}
+
+.home-body .small-screen-corner-image{
+    display:none;
+}
+
+.home-body .container .card .screw{
+    width: 1.5rem;
+    height: 1.5rem;
+    background: repeating-radial-gradient(circle at 50% 50%, rgba(200,200,200,.2) 0%, rgba(200,200,200,.2) 2%, transparent 2%, transparent 3%, rgba(200,200,200,.2) 3%, transparent 3%), conic-gradient(white 0%, silver 10%, white 35%, silver 45%, white 60%, silver 70%, white 80%, silver 95%, white 100%);
+    border-radius: 50%;
+    box-shadow: 0 0px 20px #0005, 0 -0px 20px #fff2;
+    outline: 1px solid #fff;
+    outline-offset: -2px;
+    transition: 1s;
+    transform: rotate(90deg);
+}
+
+.home-body .container .card .screw:hover {
+    transform: rotate(180deg);
+}
+
+.home-body .container .card .top-left{
+    position: absolute;
+    left:0.8rem;
+    top: 0.8rem;
+}
+
+.home-body .container .card .bottom-left{
+    position: absolute;
+    left:0.8rem;
+    bottom: 0.8rem;
+}
+
+.home-body .container .card .top-right{
+    position: absolute;
+    right:0.8rem;
+    top: 0.8rem;
+}
+
+.home-body .container .card .bottom-right{
+    position: absolute;
+    right:0.8rem;
+    bottom: 0.8rem;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Card width and height adjustments for smaller screens */
+    .home-body .card {
+        width: 90vw; /* 90% of the viewport width */
+        height: auto;
+        margin-bottom: 2rem; /* Adjust space at the bottom */
+    }
+
+    /* Title font size adjustment */
+    .home-body .cut-out-text {
+        font-size: 4rem; /* Adjust font size */
+    }
+
+    /* Button width adjustments */
+    .home-body .button {
+        width: 80vw; /* 80% of the viewport width */
+    }
+
+    /* Move the corner image outside the card, above it on smaller screens */
+    .home-body .corner-image {
+        display: none;
+    }
+
+    .home-body .container .card .screw {
+    width: 1rem;
+    height: 1rem;
+    }
+
+    .home-body .container .card .top-left{
+    position: absolute;
+    left:0.5rem;
+    top: 0.5rem;
+    }
+
+    .home-body .container .card .top-right{
+    position: absolute;
+    right:0.5rem;
+    top: 0.5rem;
+    }
+
+    .home-body .container .card .bottom-right{
+    position: absolute;
+    right:0.5rem;
+    bottom: 0.5rem;
+    }
+
+    .home-body .container .card .bottom-left{
+    position: absolute;
+    left:0.5rem;
+    bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Card width and height adjustments for very small screens */
+    .home-body .card {
+        width: 90vw; /* 90% of the viewport width */
+        height: auto;
+        margin-bottom: 1.5rem; /* Adjust space at the bottom */
+    }
+
+    /* Title font size adjustment for mobile */
+    .home-body .cut-out-text {
+        font-size: 3.5rem; /* Adjust font size */
+    }
+
+    /* Button adjustments for mobile */
+    .home-body .button {
+        width: 70vw; /* 70% of the viewport width */
+        font-size: 0.875rem; /* Further reduce font size */
+    }
+
+    /* Reove the corner image on mobile */
+    .home-body .corner-image {
+        display: none;
+    }
+}
+
+/* About Me Section */
+
+/* About Me Container Styling */
+.about-me {
+background-image: url('images/top-view-paste-white-natural-yog.jpg'); /* Replace with actual background image */
+background-size: cover;
+background-position: center;
+font-family: 'Source Serif 4', serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+padding: 3.125rem 0; /* 50px -> 3.125rem */
+}
+
+/* aboutMeCard Styling */
+.about-me .aboutMeCard {
+width: 55rem; /* 880px -> 55rem */
+height: 27rem; /* 432px -> 27rem */
+background: rgb(236, 236, 236);
+background-image: url('images/top-view-paste-white-natural-yog.jpg'); /* Apply the background image to all aboutMeCards */
+background-size: cover;
+background-position: center;
+box-shadow: rgba(0, 0, 0, 0.4) 0 0.125rem 0.25rem, rgba(0, 0, 0, 0.3) 0 0.4375rem 0.8125rem -0.1875rem, rgba(0, 0, 0, 0.2) 0 -0.1875rem 0 inset;
+margin: 1.25rem 0; /* 20px -> 1.25rem */
+display: flex;
+flex-direction: row;
+overflow: hidden;
+opacity: 0;
+animation: fadeIn 0.5s forwards;
+}
+
+/* aboutMeCard content (left and right divs) */
+.about-me .aboutMeCard-left {
+width: 35%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.about-me .aboutMeCard-right {
+width: 65%;
+padding: 1.25rem; /* 20px -> 1.25rem */
+box-sizing: border-box;
+}
+
+/* aboutMeCard Image */
+.about-me .aboutMeCard-image {
+width: 90%;
+height: auto;
+}
+
+/* aboutMeCard text */
+.about-me .aboutMeCard-right h1 {
+font-family: 'Tangerine', cursive;
+font-size: 3.75rem; /* 60px -> 3.75rem */
+color: #333;
+margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+}
+
+.about-me .aboutMeCard-right p {
+font-size: 1rem; /* 16px -> 1rem */
+color: #333;
+}
+
+/* Ordered List Styling for aboutMeCard 1 */
+.about-me .roman-list {
+list-style-type: upper-roman;
+margin-left: 1.25rem; /* 20px -> 1.25rem */
+}
+
+/* Button Styling */
+.about-me .button {
+--key-text-color: #969faf;
+--docsearch-key-shadow: inset 0 -0.125rem 0 0 #cdcde6, inset 0 0 0.0625rem 0.0625rem #fff,
+    0 0.0625rem 0.125rem 0.0625rem rgba(30, 35, 90, 0.4);
+--docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+border: none;
+background: var(--docsearch-key-gradient);
+border-radius: 0.1875rem; /* 3px -> 0.1875rem */
+box-shadow: var(--docsearch-key-shadow);
+color: var(--key-text-color);
+cursor: pointer;
+height: 2.5rem; /* 40px -> 2.5rem */
+text-align: center;
+padding: 0.375rem; /* 6px -> 0.375rem */
+margin: 0 0.375rem; /* 6px -> 0.375rem */
+display: inline-block;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 1rem; /* 16px -> 1rem */
+min-width: 1rem; /* 16px -> 1rem */
+line-height: 1rem; /* 16px -> 1rem */
+-webkit-user-select: none;
+user-select: none;
+animation: buttonAnimation 2s infinite;
+}
+
+/* Button animation */
+@keyframes buttonAnimation {
+0%, 100% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+}
+
+.about-me .slider-controls {
+display: flex;
+justify-content: center;
+margin-top: 1.25rem; /* 20px -> 1.25rem */
+}
+
+.about-me .prev, .about-me .next, .about-me .back-arrow {
+font-size: 1.2rem; /* 19px -> 1.2rem */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) { /* 768px -> 48rem */
+.about-me .aboutMeCard {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+}
+
+.about-me .aboutMeCard-left, .about-me .aboutMeCard-right {
+    width: 100%;
+}
+
+.about-me .aboutMeCard-left{
+    width: 100%;
+    height: 15%;
+}
+
+.about-me .aboutMeCard-right {
+    width: 100%;
+}
+
+.about-me .aboutMeCard-image {
+width: 80%;
+height: auto;
+}
+
+.about-me .slider-controls {
+    flex-direction: column;
+    gap: 0.9375rem; /* 15px -> 0.9375rem */
+}
+}
+
+/* Projects Body Styling */
+.projects-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('images/whiteBrickWall.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Source Serif 4', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container */
+.projects-body .container {
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Nameplate */
+.projects-body .nameplate {
+    position: relative;
+}
+
+.projects-body .nameplate img {
+    width: 100%;
+    max-width: 37.5rem; /* 600px to rem */
+    height: auto;
+}
+
+.projects-body .nameplate h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-family: 'Tangerine', cursive;
+    color: #050505;
+    text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.5); /* 2px to rem */
+}
+
+/* Neumorphic Container */
+/* Neumorphic Container */
+.projects-body .neumorphic-container {
+    --shadow:
+    -0.3125rem -0.3125rem 1rem hsl(0 0% 100% / .75),
+    0.3125rem 0.3125rem 1rem hsl(0 0% 50% / .5);
+
+    /*display: grid; /* Use grid layout */
+    /*grid-template-columns: repeat(3, 20rem); /* Default: 3 columns */
+    /*column-gap: 0.5rem; /* Space between items */
+    /*row-gap: 2.5rem; */
+
+    /* Temporal layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 0.9375rem;
+    box-shadow: var(--shadow),
+    inset 0.3125rem 0.3125rem 1rem hsl(0 0% 50% / .5),
+    inset -0.3125rem -0.3125rem 1rem hsl(0 0% 100% / .75);
+    color: hsl(0, 0%, 57%);
+    background: #e0e5ec;
+    /*width: auto; /* Full width */
+    height: auto;
+    overflow: hidden; /* Prevent horizontal scroll */
+}
+
+
+/* Media Queries for Adjustments */
+@media screen and (max-width: 1200px) {
+    .projects-body .neumorphic-container {
+        grid-template-columns: repeat(2, 20rem); /* 2 columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-body .neumorphic-container {
+        grid-template-columns: repeat(1, 20rem); /* 1 column for mobile screens */
+    }
+}
+
+/* Project Styling */
+.projects-body .neumorphic-container .project {
+    --shadow:
+    -0.3125rem -0.3125rem 1rem hsl(0 0% 100% / .75),
+    0.3125rem 0.3125rem 1rem hsl(0 0% 50% / .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7375rem;
+    padding-bottom: 1rem;
+    border-radius: 0.9375rem;
+    box-shadow: var(--shadow),
+    inset 0.3125rem 0.3125rem 1rem hsl(0 0% 50% / .5),
+    inset -0.3125rem -0.3125rem 1rem hsl(0 0% 100% / .75);
+    color: hsl(0, 0%, 57%);
+    background: #e0e5ec;
+    background-size: cover;
+    background-position: center;
+    /*width: 20rem;*/
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url('images/pedestal.jpg');
+}
+
+
+/* Images inside neumorphic container */
+.projects-body .neumorphic-container .images {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    position: relative; /* To position the h1 and info icon */
+}
+
+.projects-body .neumorphic-container .images img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.projects-body .neumorphic-container .project1 .images img{
+    width: 25rem;
+    position: relative;
+    /*bottom: 4.5rem;*/
+
+    /*Temporal Styling */
+    bottom: 3.2rem;
+
+    height: auto;
+}
+
+.projects-body .neumorphic-container .project2 .images img{
+    width: 25rem;
+    position: relative;
+    bottom: 4.2rem;
+    height: auto;
+}
+
+.projects-body .neumorphic-container .project3 .images img{
+    width: 25rem;
+    position: relative;
+    bottom: 4.6rem;
+    height: auto;
+}
+
+/* Project details h1 positioning */
+.projects-body .neumorphic-container .images .project-details {
+    position: absolute;
+
+    /*top: 75%; /* Slightly below halfway */
+
+    /* Temporal Styling */
+    top: 80%;
+
+    left: 50%;
+    transform: translateX(-50%);
+    color: #050505;
+    /*font-family: 'Tangerine', cursive;*/
+    text-align: left;
+    font-size: 1rem; /* Reduced font size */
+    font-weight: 300;
+    z-index: 1; /* Ensure it appears above the image */
+    padding: 0 0.01rem; /* Add padding to avoid overflow */
+}
+
+/* Info icon */
+.projects-body .neumorphic-container .images .info-icon {
+    position: absolute;
+    top: 10%; /* Position the icon near the top */
+    right: 10%; /* Adjust right position */
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.projects-body .neumorphic-container .images .info-icon:hover {
+    background-color: #f4f4f4; /* Slight hover effect */
+}
+
+/* Tooltip text */
+.projects-body .neumorphic-container .images .tooltip {
+    display: none;
+    background-color: white;
+    color: hsl(0, 0%, 41%);
+    padding: 1rem;
+    border-radius: 0.625rem;
+    box-shadow: 0.3125rem 0.3125rem 1rem rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    z-index: 3;
+    width: 250px;
+}
+
+/* Display tooltip on hover */
+.projects-body .neumorphic-container .images .info-icon:hover + .tooltip,
+.projects-body .neumorphic-container .images .tooltip.visible {
+    display: block;
+}
+
+/* Button */
+.projects-body .neumorphic-container .images .button-name {
+    align-items: center;
+    appearance: none;
+    background-color: #fcfcfd;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow:
+        rgba(45, 35, 66, 0.2) 0 2px 4px,
+        rgba(45, 35, 66, 0.15) 0 7px 13px -3px,
+        #d6d6e7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395a;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition:
+        box-shadow 0.15s,
+        transform 0.15s;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    margin-top: 1rem; /* Adds space between the title and the button */
+}
+
+.projects-body .neumorphic-container .images .button-name:active {
+    box-shadow:
+        rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+    transform: translateY(-2px);
+}
+
+.projects-body .neumorphic-container .images .button-name:hover {
+    box-shadow:
+        rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.15) 0 7px 13px -3px;
+    transform: translateY(-2px);
+}
+
+/* Skills Body Styling */
+.skills-body {
+    font-family: 'Source Serif 4', serif;
+    background: url('images/white-fine-leather-textured-back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Header */
+.skills-body .header {
+    width: 15rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skills-body .name-plate {
+    background: url('images/metal-name-plate.png') no-repeat center center;
+    background-size: cover;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.skills-body .name-plate h1{
+    font-size: 4.5rem;
+    color: #03055B;
+}
+
+.skills-body h1 {
+    font-family: 'Tangerine', cursive;
+    font-size: 3rem;
+    color: black;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Skills Container */
+.skills-body .skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Skill Card */
+.skills-body .skill-card {
+    width: 100%;
+    max-width: 31.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Styles */
+.skills-body .my-skill-card {
+    width: 25rem;
+    height: 28.4rem;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0.125rem 0.25rem, rgba(0, 0, 0, 0.3) 0px 0.4375rem 0.8125rem -0.1875rem, rgba(0, 0, 0, 0.2) 0px -0.1875rem 0px inset;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-body .my-skill-card3 .my-skill-card {
+    width: 28rem;
+    height: 28.4rem;
+}
+
+/* List Items Styling */
+.skills-body ul {
+    padding: 0.5rem;
+    color: black;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.skills-body li {
+    margin: 0.3125rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) {
+    .skills-body .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-body .skill-card {
+        max-width: 100%;
+    }
+
+    .skills-body h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills-body .my-skill-card {
+        width: 100%;
+        max-width: 30rem;
+    }
+}
+
+@media (max-width: 30rem) {
+    .skills-body h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Contact-body wrapper */
+.Contact-body {
+    font-family: "Source Serif 4", serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('images/top-view-white-river-rocks-backg.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contact Form Container */
+.Contact-body .contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Floating Card Style */
+.Contact-body .contact-form-card {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    max-width: 37.5rem; /* 600px */
+    padding: 1.875rem; /* 30px */
+    border-radius: 0.9375rem; /* 15px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.719);
+    color: black;
+    text-align: center;
+}
+
+/* Header and LinkedIn Circle with button styles */
+.Contact-body .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px */
+    gap: 0.9375rem; /* 15px */
+}
+
+.Contact-body h1 {
+    background-color: #fcfcfd;
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    border-radius: 0.25rem; /* 4px */
+    font-size: 2.5rem; /* 40px */
+    font-family: "Tangerine", cursive;
+    color: #36395a;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 0.125rem 0.25rem, rgba(45, 35, 66, 0.15) 0 0.4375rem 0.8125rem -0.1875rem, #d6d6e7 0 -0.1875rem 0 inset;
+    font-weight: bold;
+}
+
+.Contact-body .linkedin-circle {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 0.125rem 0.25rem, rgba(45, 35, 66, 0.15) 0 0.4375rem 0.8125rem -0.1875rem, #d6d6e7 0 -0.1875rem 0 inset;
+}
+
+.Contact-body .linkedin-circle i {
+    font-size: 1.125rem; /* 18px */
+    color: #0077b5;
+}
+
+/* Form styling */
+.Contact-body form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* 20px */
+}
+
+/* Input fields and text area */
+.Contact-body .input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+/* Label inside the input fields */
+.Contact-body .input-group label {
+    position: absolute;
+    top: 50%;
+    left: 1rem; /* 16px */
+    transform: translateY(-50%);
+    font-size: 0.875rem; /* 14px */
+    color: grey;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* Input fields styling */
+.Contact-body .input-group input,
+.Contact-body .input-group textarea {
+    padding: 0.9375rem; /* 15px */
+    font-size: 1.25rem; /* 20px */
+    border: 0.125rem solid #ccc; /* 2px */
+    border-radius: 0.625rem; /* 10px */
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 0.125rem 0.25rem, rgba(45, 35, 66, 0.15) 0 0.4375rem 0.8125rem -0.1875rem, #d6d6e7 0 -0.1875rem 0 inset;
+}
+
+/* Input fields focus and hover states */
+.Contact-body .input-group input:focus,
+.Contact-body .input-group textarea:focus {
+    border-color: #007BFF;
+    box-shadow: rgba(0, 123, 255, 0.5) 0 0 0.625rem;
+}
+
+.Contact-body .input-group input:hover,
+.Contact-body .input-group textarea:hover {
+    border-color: #0056b3;
+}
+
+/* Label moves when user starts typing */
+.Contact-body .input-group input:focus + label,
+.Contact-body .input-group textarea:focus + label,
+.Contact-body .input-group input:valid + label,
+.Contact-body .input-group textarea:valid + label {
+    top: -0.625rem; /* -10px */
+    left: 1rem; /* 16px */
+    font-size: 0.75rem; /* 12px */
+    color: #007BFF;
+}
+
+/* Flex for first name and last name fields */
+.Contact-body .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.625rem; /* 10px */
+}
+
+.Contact-body .form-row .input-group {
+    flex: 1;
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 768px) {
+    /* Stacks the first and last name fields in column fashion */
+    .Contact-body .form-row {
+        flex-direction: column; /* Stack the input fields vertically */
+        gap: 1.25rem; /* 20px */
+    }
+
+    .Contact-body .form-row .input-group {
+        width: 100%; /* Ensure input fields take full width in column layout */
+    }
+}
+
+/* Submit Button Styling (from Uiverse.io by lenfear23) */
+.Contact-body .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 9.375rem; /* 150px */
+    height: 3.125rem; /* 50px */
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 1.875rem; /* 30px */
+    border: 0.0625rem solid #8F9092; /* 1px */
+    transition: all 0.2s ease;
+    font-size: 1.125rem; /* 18px */
+    font-family: "Source Serif 4", serif;
+    font-weight: 600;
+    color: #606060;
+    text-shadow: 0 0.0625rem #fff;
+}
+
+.Contact-body .submit-button:hover {
+    box-shadow: 0 0.25rem 0.1875rem 0.0625rem #FCFCFC, 0 0.375rem 0.5rem #D6D7D9, 0 -0.25rem 0.25rem #CECFD1, 0 -0.375rem 0.25rem #FEFEFE, inset 0 0 0.3125rem 0.1875rem #CECFD1;
+}
+
+.Contact-body .submit-button:active {
+    box-shadow: 0 0.25rem 0.1875rem 0.0625rem #FCFCFC, 0 0.375rem 0.5rem #D6D7D9, 0 -0.25rem 0.25rem #CECFD1, 0 -0.375rem 0.25rem #FEFEFE, inset 0 0 0.3125rem 0.1875rem #999, inset 0 0 1.875rem #aaa;
+}
+
+.Contact-body .submit-button:focus {
+    box-shadow: 0 0.25rem 0.1875rem 0.0625rem #FCFCFC, 0 0.375rem 0.5rem #D6D7D9, 0 -0.25rem 0.25rem #CECFD1, 0 -0.375rem 0.25rem #FEFEFE, inset 0 0 0.3125rem 0.1875rem #999, inset 0 0 1.875rem #aaa;
+}
