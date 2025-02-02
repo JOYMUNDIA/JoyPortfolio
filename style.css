@@ -676,15 +676,10 @@ height: auto;
     -0.3125rem -0.3125rem 1rem hsl(0 0% 100% / .75),
     0.3125rem 0.3125rem 1rem hsl(0 0% 50% / .5);
 
-    /*display: grid; /* Use grid layout */
-    /*grid-template-columns: repeat(3, 20rem); /* Default: 3 columns */
-    /*column-gap: 0.5rem; /* Space between items */
-    /*row-gap: 2.5rem; */
-
-    /* Temporal layout */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 20rem); /* Default: 3 columns */
+    column-gap: 0.5rem; /* Space between items */
+    row-gap: 2.5rem; 
 
     padding: 1rem;
     padding-bottom: 2rem;
@@ -758,10 +753,7 @@ height: auto;
 .projects-body .neumorphic-container .project1 .images img{
     width: 25rem;
     position: relative;
-    /*bottom: 4.5rem;*/
-
-    /*Temporal Styling */
-    bottom: 3.2rem;
+    bottom: 4.5rem;
 
     height: auto;
 }
@@ -784,10 +776,7 @@ height: auto;
 .projects-body .neumorphic-container .images .project-details {
     position: absolute;
 
-    /*top: 75%; /* Slightly below halfway */
-
-    /* Temporal Styling */
-    top: 80%;
+    top: 75%; /* Slightly below halfway */
 
     left: 50%;
     transform: translateX(-50%);
