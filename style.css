@@ -939,8 +939,8 @@ height: auto;
 
 /* Card Styles */
 .skills-body .my-skill-card {
-    width: 25rem;
-    height: 28.4rem;
+    width: auto;
+    height: auto;
     background: rgb(236, 236, 236);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0.125rem 0.25rem, rgba(0, 0, 0, 0.3) 0px 0.4375rem 0.8125rem -0.1875rem, rgba(0, 0, 0, 0.2) 0px -0.1875rem 0px inset;
     padding: 1.5rem;
@@ -950,8 +950,10 @@ height: auto;
 }
 
 .skills-body .my-skill-card3 .my-skill-card {
-    width: 28rem;
-    height: 28.4rem;
+    width: auto;
+    max-width: fit-content;
+    padding: 0.5rem 1rem;
+    height: auto;
 }
 
 /* List Items Styling */
@@ -960,6 +962,8 @@ height: auto;
     color: black;
     font-size: 1.2rem;
     text-align: left;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
 }
 
 .skills-body li {
