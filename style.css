@@ -1005,6 +1005,8 @@ height: auto;
     min-height: 100vh;
     background-image: url('images/top-view-white-river-rocks-backg.jpg'); /* Replace with your background image */
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.185);
+    background-blend-mode: multiply;
     background-position: center;
     display: flex;
     justify-content: center;
