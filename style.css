@@ -482,10 +482,17 @@ justify-content: flex-start;
 padding: 3.125rem 0; /* 50px -> 3.125rem */
 }
 
+.about-me .ccontainer{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* aboutMeCard Styling */
 .about-me .aboutMeCard {
-width: 55rem; /* 880px -> 55rem */
-height: 27rem; /* 432px -> 27rem */
+width: 85vw; /* 880px -> 55rem */
+height: auto; /* 432px -> 27rem */
+padding: 2rem;
 background: rgb(236, 236, 236);
 background-image: url('images/top-view-paste-white-natural-yog.jpg'); /* Apply the background image to all aboutMeCards */
 background-size: cover;
@@ -494,6 +501,8 @@ box-shadow: rgba(0, 0, 0, 0.4) 0 0.125rem 0.25rem, rgba(0, 0, 0, 0.3) 0 0.4375re
 margin: 1.25rem 0; /* 20px -> 1.25rem */
 display: flex;
 flex-direction: row;
+align-items: center;
+justify-content: center;
 overflow: hidden;
 opacity: 0;
 animation: fadeIn 0.5s forwards;
@@ -515,8 +524,13 @@ box-sizing: border-box;
 
 /* aboutMeCard Image */
 .about-me .aboutMeCard-image {
-width: 90%;
-height: auto;
+    width: 90%;
+    height: auto;
+    -o-border-radius: 1rem 6.9rem 1rem ;
+    -webkit-border-radius: 1rem 6.9rem 1rem ;
+    -moz-border-radius: 1rem 6.9rem 1rem ;
+    -ms-border-radius: 1rem 6.9rem 1rem ;
+    border-radius: 1rem 6.9rem 1rem ;
 }
 
 /* aboutMeCard text */
@@ -617,7 +631,7 @@ font-size: 1.2rem; /* 19px -> 1.2rem */
 }
 
 .about-me .aboutMeCard-image {
-width: 80%;
+width: 50%;
 height: auto;
 }
 
@@ -743,22 +757,32 @@ height: auto;
     position: relative; /* To position the h1 and info icon */
 }
 
+.projects-body .neumorphic-container .images a{
+    text-decoration: none;
+}
+
 .projects-body .neumorphic-container .images img {
     width: 100%;
     max-width: 100%;
     height: auto;
+    position: relative;
     transition: transform 0.3s ease;
 }
 
-.projects-body .neumorphic-container .project1 .images img{
+.projects-body .neumorphic-container .images img{
     width: 25rem;
     position: relative;
-    bottom: 4.5rem;
-
+    bottom: 1rem;
     height: auto;
 }
 
-.projects-body .neumorphic-container .project2 .images img{
+.projects-body .neumorphic-container .images .logbookimage{
+    height: 18rem;
+    width: auto;
+    position: relative;
+    /*bottom: 4rem;*/
+} 
+/*.projects-body .neumorphic-container .project2 .images img{
     width: 25rem;
     position: relative;
     bottom: 4.2rem;
@@ -770,7 +794,7 @@ height: auto;
     position: relative;
     bottom: 4.6rem;
     height: auto;
-}
+}*/
 
 /* Project details h1 positioning */
 .projects-body .neumorphic-container .images .project-details {
@@ -781,12 +805,20 @@ height: auto;
     left: 50%;
     transform: translateX(-50%);
     color: #050505;
-    /*font-family: 'Tangerine', cursive;*/
-    text-align: left;
-    font-size: 1rem; /* Reduced font size */
-    font-weight: 300;
     z-index: 1; /* Ensure it appears above the image */
     padding: 0 0.01rem; /* Add padding to avoid overflow */
+}
+
+.projects-body .neumorphic-container .images .project-details a{
+    text-decoration: none;
+}
+
+.projects-body .neumorphic-container .images .project-details a h1{
+    color: #050505;
+    width: 100%;
+    text-align: left;
+    font-size: 1.5rem; /* Reduced font size */
+    font-weight: 700;
 }
 
 /* Info icon */
