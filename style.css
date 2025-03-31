@@ -780,8 +780,16 @@ height: auto;
     height: 18rem;
     width: auto;
     position: relative;
-    /*bottom: 4rem;*/
-} 
+}
+
+.projects-body .neumorphic-container .images .mealPlanner-img{
+    height: 17.5rem;
+    width: auto;
+    bottom: 0;
+    top: 0.1rem;
+    position: relative;
+}
+
 /*.projects-body .neumorphic-container .project2 .images img{
     width: 25rem;
     position: relative;
