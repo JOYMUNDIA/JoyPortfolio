@@ -767,14 +767,14 @@ height: auto;
     height: auto;
     position: relative;
     transition: transform 0.3s ease;
+    bottom: 1rem;
 }
 
-.projects-body .neumorphic-container .images img{
-    width: 25rem;
-    position: relative;
-    bottom: 1rem;
+/*.projects-body .neumorphic-container .images img{
+    /*width: 25rem;*/
+    /*position: relative;
     height: auto;
-}
+}*/
 
 .projects-body .neumorphic-container .images .logbookimage{
     height: 18rem;
