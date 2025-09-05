@@ -755,6 +755,7 @@ height: auto;
     justify-content: center;
     height: 100%;
     position: relative; /* To position the h1 and info icon */
+    bottom: 1rem;
 }
 
 .projects-body .neumorphic-container .images a{
@@ -767,7 +768,7 @@ height: auto;
     height: auto;
     position: relative;
     transition: transform 0.3s ease;
-    bottom: 1rem;
+    
 }
 
 /*.projects-body .neumorphic-container .images img{
@@ -785,9 +786,9 @@ height: auto;
 .projects-body .neumorphic-container .images .mealPlanner-img{
     height: 17.5rem;
     width: auto;
-    bottom: 0;
-    top: 0.1rem;
     position: relative;
+    /*bottom: 0;*/
+    top: 0.7rem;
 }
 
 /*.projects-body .neumorphic-container .project2 .images img{
@@ -827,6 +828,8 @@ height: auto;
     text-align: left;
     font-size: 1.5rem; /* Reduced font size */
     font-weight: 700;
+    position: relative;
+    top: 0.85rem;
 }
 
 /* Info icon */
