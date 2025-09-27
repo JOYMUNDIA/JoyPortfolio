@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="style.css">
 
     <!--Preloading images to fix layout issues on mobile phones-->
-    <link rel="preload" href="images/dish-project.png" as="national dish project image">
+    <!--Preload did not fix the issue-->
+    <!--<link rel="preload" href="images/dish-project.png" as="national dish project image">
     <link rel="preload" href="images/SGCalc.png" as="savings goal calculator project image">
     <link rel="preload" href="images/logbook.png" as="shift handover project image">
     <link rel="preload" href="images/meal-planner-thumbnail.png" as="meal planner project image">
-    <link rel="preload" href="images/contra-image.png" as="contradictionary project image">
+    <link rel="preload" href="images/contra-image.png" as="contradictionary project image">-->
     
 </head>
 <body>
@@ -416,6 +417,39 @@
         <!--End of Contact Section-->
         
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select all project images inside the .images containers
+            const images = document.querySelectorAll(".images img");
+
+            images.forEach((img) => {
+            if (img.complete) {
+                // Image already loaded from cache
+                handleImageLoad(img);
+            } else {
+                // Wait for it to load
+                img.addEventListener("load", () => handleImageLoad(img));
+                img.addEventListener("error", () => {
+                console.warn("Image failed to load:", img.src);
+                });
+            }
+            });
+
+            function handleImageLoad(img) {
+            const projectContainer = img.closest(".project");
+            if (projectContainer) {
+                // Example: add a class to trigger layout-dependent CSS transitions
+                projectContainer.classList.add("image-loaded");
+
+                // OR perform manual layout adjustments here
+                // e.g., trigger animations, measure sizes, etc.
+                // const height = img.offsetHeight;
+                // console.log(`Image height: ${height}px`);
+            }
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
     
