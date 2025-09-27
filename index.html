@@ -285,8 +285,8 @@
                         <!-- Project 5 -->
                         <div class="project project5">
                             <div class="images">
-                                <img src="images/contra-image.png" alt="Project 5" class="contradictionaryImage">
-                                <div class="project-details">
+                                <img src="images/raphael-ai-removebg-preview.png" alt="Project 5" class="contradictionaryImage">
+                                <div class="project-details project5">
                                     <a href="https://joymundia.github.io/contradictionary/" target="_blank">
                                         <h1>In App Development...</h1>
                                     </a>
@@ -298,10 +298,10 @@
                                 </div>
                                 <div class="tooltip">
                                     <p>
-                                        Imagine taking a medication only to find out your lunch made it less effective—or worse, dangerous.<br>
-                                        Our web app eliminates that risk.<br> We've built an intuitive platform that instantly shows you drug and food contraindications,<br>
-                                        empowering users and healthcare professionals to make smarter, safer health decisions in seconds.<br> 
-                                        It's like having a pharmacist and a nutritionist in your pocket.
+                                        Millions risk dangerous drug and food interactions every day.<br> 
+                                        Our web app solves this with real-time, <br>
+                                        intuitive checks for contraindications—empowering safer decisions for consumers and healthcare providers alike.<br> 
+                                        Scalable, data-driven, and essential—it’s a pharmacist and nutritionist in your pocket.
                                     </p>
                                 </div>
                             </div>
@@ -419,35 +419,20 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Select all project images inside the .images containers
-            const images = document.querySelectorAll(".images img");
 
-            images.forEach((img) => {
-            if (img.complete) {
-                // Image already loaded from cache
-                handleImageLoad(img);
-            } else {
-                // Wait for it to load
-                img.addEventListener("load", () => handleImageLoad(img));
-                img.addEventListener("error", () => {
-                console.warn("Image failed to load:", img.src);
-                });
-            }
-            });
+        /*✅ Step 1: Use window.onload Instead of DOMContentLoaded
+            DOMContentLoaded fires before images are loaded. Use window.onload to 
+            defer layout adjustments after everything (including images) is loaded.*/
 
-            function handleImageLoad(img) {
-            const projectContainer = img.closest(".project");
-            if (projectContainer) {
-                // Example: add a class to trigger layout-dependent CSS transitions
-                projectContainer.classList.add("image-loaded");
+        window.addEventListener("load", () => {
+            // Ensure layout-related logic runs only after full load
+            document.body.classList.add("fully-loaded");
 
-                // OR perform manual layout adjustments here
-                // e.g., trigger animations, measure sizes, etc.
-                // const height = img.offsetHeight;
-                // console.log(`Image height: ${height}px`);
-            }
-            }
+            // Optional: Force a reflow to trigger layout recalculation
+            const container = document.querySelector('.neumorphic-container');
+            container.style.display = "none";
+            void container.offsetHeight; // trigger reflow
+            container.style.display = "grid";
         });
     </script>
 
