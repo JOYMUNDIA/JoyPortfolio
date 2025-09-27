@@ -791,6 +791,10 @@ height: auto;
     top: 0.7rem;
 }
 
+.projects-body .neumorphic-container .images .contradictionaryImage{
+    bottom: 2.7rem;
+}
+
 /*.projects-body .neumorphic-container .project2 .images img{
     width: 25rem;
     position: relative;
@@ -808,9 +812,7 @@ height: auto;
 /* Project details h1 positioning */
 .projects-body .neumorphic-container .images .project-details {
     position: absolute;
-
     top: 75%; /* Slightly below halfway */
-
     left: 50%;
     transform: translateX(-50%);
     color: #050505;

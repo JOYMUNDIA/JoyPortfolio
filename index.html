@@ -10,6 +10,13 @@
     
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
+
+    <!--Preloading images to fix layout issues on mobile phones-->
+    <link rel="preload" href="images/dish-project.png" as="national dish project image">
+    <link rel="preload" href="images/SGCalc.png" as="savings goal calculator project image">
+    <link rel="preload" href="images/logbook.png" as="shift handover project image">
+    <link rel="preload" href="images/meal-planner-thumbnail.png" as="meal planner project image">
+    <link rel="preload" href="images/contra-image.png" as="contradictionary project image">
     
 </head>
 <body>
@@ -256,9 +263,33 @@
                                 <img src="images/meal-planner-thumbnail.png" alt="Project 4" class="mealPlanner-img">
                                 <div class="project-details">
                                     <a href="https://mealplanners.netlify.app/" target="_blank">
-                                        <h1>Oops... Under Reconstruction</h1>
+                                        <h1>Meal Planner</h1>
                                     </a>
                                     <!--<h1>Meal Planner</h1>-->
+                                    <button class="button-name" role="button" onclick="window.open('https://mealplanners.netlify.app/', '_blank');">View Project</button>
+                                </div>
+                                <div class="info-icon" onclick="toggleTooltip(this)">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div class="tooltip">
+                                    <p>
+                                        Tired of the question, “What's for Dinner?”<br>
+                                        Want to stop donating ingredients to the local Fungi?<br><br>
+                                        Try the meal planner to plan not only family meals but the kids’ school meals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 -->
+                        <div class="project project5">
+                            <div class="images">
+                                <img src="images/contra-image.png" alt="Project 5" class="contradictionaryImage">
+                                <div class="project-details">
+                                    <a href="https://mealplanners.netlify.app/" target="_blank">
+                                        <h1>In App Development...</h1>
+                                    </a>
+                                    <!--<h1>Contra=dictionary</h1>-->
                                     <button class="button-name" role="button" onclick="window.open('https://mealplanners.netlify.app/', '_blank');">View Project</button>
                                 </div>
                                 <div class="info-icon" onclick="toggleTooltip(this)">
