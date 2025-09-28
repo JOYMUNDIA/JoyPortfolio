@@ -753,11 +753,11 @@ height: auto;
 .projects-body .neumorphic-container .images {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     /*height: 100%;
-    position: relative; /* To position the h1 and info icon */
     /*bottom: 1rem;*/
     height: auto;
-    position: relative;
+    position: relative; /* info icon */
     /*margin-bottom: 3rem; /* Instead of bottom offset */
 }
 
@@ -773,20 +773,21 @@ height: auto;
     position: relative;
     transition: transform 0.3s ease;
     display: block;
-    margin-bottom: 5.7rem;
-    
 }
 
-/*.projects-body .neumorphic-container .images img{
-    /*width: 25rem;*/
-    /*position: relative;
-    height: auto;
-}*/
+.projects-body .neumorphic-container .images .nationalDishImg{
+    margin-top: 2rem;
+}
+
+.projects-body .neumorphic-container .images .savingsgoalcalImg{
+    margin-top: 3rem;
+}
 
 .projects-body .neumorphic-container .images .logbookimage{
     height: 18rem;
     width: auto;
     position: relative;
+    margin-top: 1.7rem;
 }
 
 .projects-body .neumorphic-container .images .mealPlanner-img{
@@ -795,17 +796,13 @@ height: auto;
     position: relative;
     /*bottom: 0;*/
     /*top: 0.7rem;*/
-    margin-bottom: 4.1rem;
+    margin-top: 2.875rem;
 }
 
 .projects-body .neumorphic-container .images .contradictionaryImage{
     /*bottom: 2.7rem;*/
     width: 15.3rem;
     margin-top: 5rem;    
-}
-
-.projects-body .neumorphic-container .images .project5{
-    margin-top: -1.8rem;
 }
 
 /*.projects-body .neumorphic-container .project2 .images img{
@@ -824,13 +821,24 @@ height: auto;
 
 /* Project details h1 positioning */
 .projects-body .neumorphic-container .images .project-details {
-    position: absolute;
+    /*position: absolute;
     top: 75%; /* Slightly below halfway */
-    left: 50%;
+    /*left: 50%;
     transform: translateX(-50%);
     color: #050505;
     z-index: 1; /* Ensure it appears above the image */
-    padding: 0 0.01rem; /* Add padding to avoid overflow */
+    /*padding: 0 0.01rem; /* Add padding to avoid overflow */
+    position: relative;
+    top: -1rem;
+    left: 2.5rem;
+    margin-top: auto; /* or a manual margin */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
 }
 
 .projects-body .neumorphic-container .images .project-details a{
@@ -840,7 +848,7 @@ height: auto;
 .projects-body .neumorphic-container .images .project-details a h1{
     color: #050505;
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 1.5rem; /* Reduced font size */
     font-weight: 700;
     position: relative;
@@ -1249,15 +1257,4 @@ height: auto;
 
 .Contact-body .submit-button:focus {
     box-shadow: 0 0.25rem 0.1875rem 0.0625rem #FCFCFC, 0 0.375rem 0.5rem #D6D7D9, 0 -0.25rem 0.25rem #CECFD1, 0 -0.375rem 0.25rem #FEFEFE, inset 0 0 0.3125rem 0.1875rem #999, inset 0 0 1.875rem #aaa;
-}
-
-/*✅ Step 2: Apply CSS Only When Fully Loaded
-
-Add this to your CSS to hide layout-dependent animations/positioning until everything is ready.*/
-
-body:not(.fully-loaded) .neumorphic-container {
-    visibility: hidden;
-}
-body.fully-loaded .neumorphic-container {
-    visibility: visible;
 }

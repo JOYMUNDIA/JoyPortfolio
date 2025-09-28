@@ -186,7 +186,7 @@
                         <div class="project project1">
                             <div class="images">
                                 <a href="https://nationaldishproject.netlify.app" target="_blank">
-                                    <img src="images/dish-project.png" alt="Project 1">
+                                    <img src="images/dish-project.png" alt="Project 1" class="nationalDishImg">
                                 </a>
                                 <div class="project-details">
                                     <a href="https://nationaldishproject.netlify.app" target="_blank">
@@ -212,7 +212,7 @@
                         <div class="project project2">
                             <div class="images">
                                 <a href="https://savingsgoalcalc.netlify.app" target="_blank">
-                                    <img src="images/SGCalc.png" alt="Project 2">
+                                    <img src="images/SGCalc.png" alt="Project 2" class="savingsgoalcalImg">
                                 </a>
                                 <div class="project-details">
                                     <a href="https://savingsgoalcalc.netlify.app" target="_blank">
@@ -417,24 +417,6 @@
         <!--End of Contact Section-->
         
     </div>
-
-    <script>
-
-        /*✅ Step 1: Use window.onload Instead of DOMContentLoaded
-            DOMContentLoaded fires before images are loaded. Use window.onload to 
-            defer layout adjustments after everything (including images) is loaded.*/
-
-        window.addEventListener("load", () => {
-            // Ensure layout-related logic runs only after full load
-            document.body.classList.add("fully-loaded");
-
-            // Optional: Force a reflow to trigger layout recalculation
-            const container = document.querySelector('.neumorphic-container');
-            container.style.display = "none";
-            void container.offsetHeight; // trigger reflow
-            container.style.display = "grid";
-        });
-    </script>
 
     <script src="script.js"></script>
     
