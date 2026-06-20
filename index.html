@@ -91,82 +91,251 @@
         <section id="about-me">
             <div class="about-me">
                 <div class="container">
-                <!-- aboutMeCard 1 -->
-                <div class="aboutMeCard">
-                    <div class="aboutMeCard-left">
-                        <img src="images/bread.jpeg" alt="Fresh Bread, coffee, peanut Butter and Boiled egg" class="aboutMeCard-image">
-                    </div>
-                    <div class="aboutMeCard-right">
-                    <h1>About Me</h1>
-                    <p>
-                        A freshly bought loaf of Bread has 3 lifespans in our house;<br>
+                    
+                <div class="aboutDiv">
+
+                <template id="swirl-template">
+                <svg viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid meet">
+
+                    <defs>
+                    <radialGradient id="swirlGrad">
+                        <stop offset="0%" stop-color="white"/>
+                        <stop offset="40%" stop-color="silver"/>
+                        <stop offset="70%" stop-color="white"/>
+                        <stop offset="100%" stop-color="silver" stop-opacity="0.6"/>
+                    </radialGradient>
+
+                    <linearGradient id="conicApprox" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="white"/>
+                        <stop offset="10%" stop-color="silver"/>
+                        <stop offset="35%" stop-color="white"/>
+                        <stop offset="45%" stop-color="silver"/>
+                        <stop offset="60%" stop-color="white"/>
+                        <stop offset="70%" stop-color="silver"/>
+                        <stop offset="80%" stop-color="white"/>
+                        <stop offset="95%" stop-color="silver"/>
+                        <stop offset="100%" stop-color="white"/>
+                    </linearGradient>
+
+                    <clipPath id="circleClip">
+                        <circle cx="100" cy="100" r="49"/>
+                    </clipPath>
+
+                    <filter id="shadowOuter" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="3" dy="5" stdDeviation="4"
+                                    flood-color="#000"
+                                    flood-opacity="0.35"/>
+                    </filter>
+
+                    <filter id="shadowInner" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="2" dy="4" stdDeviation="3"
+                                    flood-color="#000"
+                                    flood-opacity="0.3"/>
+                    </filter>
+
+                    <filter id="shadowPhoto" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="0" dy="2" stdDeviation="3"
+                                    flood-color="#000"
+                                    flood-opacity="0.4"/>
+                    </filter>
+                    </defs>
+
+                    <path d="M 100,10 A 90,90 0 1 1 10,100"
+                        fill="none"
+                        stroke="url(#conicApprox)"
+                        stroke-width="28"
+                        stroke-linecap="round"
+                        filter="url(#shadowOuter)"/>
+
+                    <path d="M 100,14 A 86,86 0 1 1 14,100"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="6"
+                        stroke-linecap="round"/>
+
+                    <path d="M 155,35 A 62,62 0 1 1 38,155"
+                        fill="none"
+                        stroke="url(#conicApprox)"
+                        stroke-width="22"
+                        stroke-linecap="round"
+                        filter="url(#shadowInner)"/>
+
+                    <path d="M 152,40 A 58,58 0 1 1 40,152"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-width="5"
+                        stroke-linecap="round"/>
+
+                    <circle cx="100"
+                            cy="100"
+                            r="51"
+                            fill="url(#swirlGrad)"
+                            filter="url(#shadowPhoto)"/>
+
+                    <circle cx="100"
+                            cy="100"
+                            r="53"
+                            fill="none"
+                            stroke="#fff"
+                            stroke-width="3"/>
+
+                    <image class="swirl-image"
+                        x="51"
+                        y="51"
+                        width="98"
+                        height="98"
+                        clip-path="url(#circleClip)"
+                        preserveAspectRatio="xMidYMid slice"/>
+                </svg>
+                </template>
+
+                <div class="banner">
+
+                <!-- LEFT: text -->
+                <div class="banner-left">
+                    <div class="title-teal">About</div>
+                    <div class="title-dark">Me</div>
+                    <p class="desc">I notice weird things.<br/>
+                    Like how the lifespan of bread in our house changes depending on whether eggs or peanut butter are available.<br/>
+                    That curiosity eventually turned into an obsession with patterns, systems, and data.
                     </p>
-                    <ol class="roman-list">
-                        <li>The ‘it-never-existed’ lifespan,</li>
-                        <li>The ‘Consumed-before-going-bad’ lifespan, and finally,</li>
-                        <li>The ‘we-are-feeling-generous-and-would-like-to-share-with-the-local-fungi’ lifespan.</li>
-                    </ol><br>
-                    <p>
-                        Depending on the environmental factors in the fridge, the bread assumes one of the lifespans.
-                        In the presence of eggs, the bread takes up the first. In the absence of eggs but in the presence of Peanut Butter,
-                        the bread survives a decent life while not going stale. In the absence of both eggs and peanut butter,
-                        the bread defaults to the third lifespan.<br>
-                        <br> That is me in a nutshell. I observe the exquisite simplicity found in the commonplace, appreciating the details that others might dismiss.
-                    </p>
-                    </div>
                 </div>
 
-                <!-- aboutMeCard 2 -->
-                <div class="aboutMeCard">
-                    <div class="aboutMeCard-left">
-                    <img src="images/trolley.jpeg" alt="Small trolley on a paper with data charts" class="aboutMeCard-image">
-                    </div>
-                    <div class="aboutMeCard-right">
-                    <h1>About Me</h1>
-                    <p>
-                        I find great satisfaction in leveraging data to tackle daily challenges, such as estimating the shelf life of groceries
-                        based on consumption habits. This interest in optimization is closely connected to my experience as a Business Development
-                        intern, where I acquired essential knowledge about customer needs and discovered how to confront real-world issues
-                        with innovative solutions.
-                    </p>
-                    </div>
+                <!-- CENTER: SVG swirl -->
+                <div class="swirl-wrap" data-image="images/bread.jpeg"></div>
+
+                <!-- RIGHT: background photo + icons -->
+                <div class="banner-right">
+                    <video
+                        src="gifs/bread_molding.mp4"
+                        class="bg-img"
+                        autoplay
+                        muted
+                        loop
+                        playsinline>
+                    </video>
+                    
                 </div>
 
-                <!-- aboutMeCard 3 -->
-                <div class="aboutMeCard">
-                    <div class="aboutMeCard-left">
-                    <img src="images/cooking.jpeg" alt="Stew pot on stove with steam that spells out User-friendly Solutions" class="aboutMeCard-image">
-                    </div>
-                    <div class="aboutMeCard-right">
-                    <h1>About Me</h1>
-                    <p>
-                        Armed with a rich foundation in programming, including SQL, Java, Python, and C#, I have discovered a particular
-                        enthusiasm for front-end development, which I indulge in as a rewarding hobby. I find joy in exploring new designs
-                        and user interfaces. This blend of skills and hands-on experience allows me to cook up user-friendly solutions.
-                    </p>
-                    </div>
+                <div class="teal-bar"></div>
+                <div class="black-tri"></div>
                 </div>
 
-                <!-- aboutMeCard 4 -->
-                <div class="aboutMeCard">
-                    <div class="aboutMeCard-left">
-                    <img src="images/graduation.jpeg" alt="Graduation cap on top of a stack of books" class="aboutMeCard-image">
-                    </div>
-                    <div class="aboutMeCard-right">
-                    <h1>About Me</h1>
-                    <p>
-                        I earned a degree in Human Biology and I am about to wrap up my second degree in Computer Applications.
-                        My objective is to fuse my insights from biology with technology to craft effective solutions in the healthcare arena.
+
+                <div class="banner">
+
+                <!-- LEFT: text -->
+                <div class="banner-left">
+                    <div class="title-teal">About</div>
+                    <div class="title-dark">Me</div>
+                    <p class="desc">
+                    I started in Human Biology.<br/>
+                    Studying living systems taught me to ask questions, challenge assumptions, and understand how complex things work.<br/>
+                    Then I made what many considered a reckless decision:<br/>
+                    After earning my Biology degree, I went back to university to pursue Computer Applications and chase my fascination with software.
                     </p>
-                    </div>
                 </div>
 
-                <!-- Slider Controls -->
+                <!-- CENTER: SVG swirl -->
+                <div class="swirl-wrap" data-image="images/graduation.jpeg"></div>
+
+                <!-- RIGHT: background photo + icons -->
+                <div class="banner-right">
+                    <video
+                        src="gifs/the_leap.mp4"
+                        class="bg-img"
+                        autoplay
+                        muted
+                        loop
+                        playsinline>
+                    </video>
+                    
+                </div>
+
+                <div class="teal-bar"></div>
+                <div class="black-tri"></div>
+                </div>
+
+
+
+                <div class="banner">
+
+                <!-- LEFT: text -->
+                <div class="banner-left">
+                    <div class="title-teal">About</div>
+                    <div class="title-dark">Me</div>
+                    <p class="desc">
+                    The gamble paid off.<br/>
+                    Today I build applications using React, Node.js, ASP.NET, SQL, and cloud platforms.<br/>
+                    My favorite part is turning messy real-world problems into practical solutions people can actually use.
+                    </p>
+                </div>
+
+                <!-- CENTER: SVG swirl -->
+                <div class="swirl-wrap" data-image="images/woman_Coding.png"></div>
+
+                <!-- RIGHT: background photo + icons -->
+                <div class="banner-right">
+                    <video
+                        src="gifs/girl_Celebrating.mp4"
+                        class="bg-img"
+                        autoplay
+                        muted
+                        loop
+                        playsinline>
+                    </video>
+                    
+                </div>
+
+                <div class="teal-bar"></div>
+                <div class="black-tri"></div>
+                </div>
+
+
+
+                <div class="banner">
+
+                <!-- LEFT: text -->
+                <div class="banner-left">
+                    <div class="title-teal">About</div>
+                    <div class="title-dark">Me</div>
+                    <p class="desc">
+                    Building software is rewarding.<br/>
+                    Helping others learn to build software is even better.<br/>
+                    I love mentoring and training the next generation of developers. In my free time, I dedicate myself to teaching for free, sharing knowledge, and helping others grow in tech.
+                    </p>
+                </div>
+
+                <!-- CENTER: SVG swirl -->
+                <div class="swirl-wrap" data-image="images/woman_teaching.png"></div>
+
+                <!-- RIGHT: background photo + icons -->
+                <div class="banner-right">
+                    <video
+                        src="gifs/woman_teaching.mp4"
+                        class="bg-img"
+                        autoplay
+                        muted
+                        loop
+                        playsinline>
+                    </video>
+                    
+                </div>
+
+                <div class="teal-bar"></div>
+                <div class="black-tri"></div>
+                </div>
+
+                 <!-- Slider Controls -->
                 <div class="slider-controls">
                     <button class="button prev" onclick="prevSlide()"><span class="back-arrow">&larr;</span>&nbsp;Prev</button>
                     <button class="button next" onclick="nextSlide()">Next&nbsp;<span class="back-arrow">&rarr;</span></button>
                 </div>
                 </div>
+            </div>
+
             </div>
         </section>
         <!--End of About Me Section-->
