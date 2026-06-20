@@ -79,6 +79,16 @@ document.querySelectorAll('.swirl-wrap').forEach((container, index) => {
 let currentSlide = 0;
 const aboutMeCards = document.querySelectorAll('.banner');
 
+aboutMeCards.forEach((card, index) => {
+    const counter = document.createElement('div');
+
+    counter.className = 'slide-number';
+
+    counter.textContent = `${index + 1}/${aboutMeCards.length}`;
+
+    card.appendChild(counter);
+});
+
 function showSlide(index) {
 if (index >= aboutMeCards.length) {
     currentSlide = 0;
