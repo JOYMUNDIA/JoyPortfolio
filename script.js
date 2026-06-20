@@ -49,8 +49,35 @@ links.forEach(link => {
 
 
 //About Me content
+
+//svg
+const template = document.getElementById('swirl-template');
+
+document.querySelectorAll('.swirl-wrap').forEach((container, index) => {
+    const clone = template.content.cloneNode(true);
+
+    const svg = clone.querySelector('svg');
+
+    const uniqueId = `swirl-${index}`;
+
+    svg.innerHTML = svg.innerHTML
+        .replace(/swirlGrad/g, `swirlGrad-${uniqueId}`)
+        .replace(/conicApprox/g, `conicApprox-${uniqueId}`)
+        .replace(/circleClip/g, `circleClip-${uniqueId}`)
+        .replace(/shadowOuter/g, `shadowOuter-${uniqueId}`)
+        .replace(/shadowInner/g, `shadowInner-${uniqueId}`)
+        .replace(/shadowPhoto/g, `shadowPhoto-${uniqueId}`);
+
+    const image = svg.querySelector('.swirl-image');
+    image.setAttribute('href', container.dataset.image);
+
+    container.appendChild(svg);
+});
+
+//slide navigation
+
 let currentSlide = 0;
-const aboutMeCards = document.querySelectorAll('.aboutMeCard');
+const aboutMeCards = document.querySelectorAll('.banner');
 
 function showSlide(index) {
 if (index >= aboutMeCards.length) {
