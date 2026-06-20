@@ -1429,3 +1429,20 @@ height: auto;
     .aboutDiv .icons-col { flex-direction: row; flex-wrap: wrap; gap: 8px; }
     .aboutDiv .teal-bar { width: 65%; }
   }
+
+  .slide-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    padding: 4px 10px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.85);
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;
+
+    z-index: 10;
+}
