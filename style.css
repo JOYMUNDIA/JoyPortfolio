@@ -948,12 +948,27 @@ height: auto;
 /* Skills Body Styling */
 .skills-body {
     font-family: 'Source Serif 4', serif;
-    background: url('images/white-fine-leather-textured-back.jpg') no-repeat center center fixed;
-    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+}
+
+.skills-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url('images/white-fine-leather-textured-back.jpg')
+                no-repeat center center fixed;
+    background-size: cover;
+
+    filter: grayscale(100%);
+
+    z-index: -1;
 }
 
 /* Header */
